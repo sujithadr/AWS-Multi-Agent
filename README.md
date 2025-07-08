@@ -30,23 +30,6 @@ This repository demonstrates a secure, modular, **multi-agent system** where rea
 
 ---
 
-## 📁 Project Structure
-
-```
-AWS‑Multi‑Agent/
-├── lambda_tools/              # Source code for Lambda functions (tools)
-│   ├── get_hotel_info/
-│   ├── get_restaurant_info/
-│   └── shared_utils/
-├── prompts/                   # Optional: Prompt templates for Bedrock Agents
-├── deployment/                # CloudFormation / SAM templates
-├── notebooks/                 # Bedrock agent simulation/testing
-├── README.md                  # This file
-└── LICENSE
-```
-
----
-
 ## ⚙️ Prerequisites
 
 - AWS account with:
@@ -56,51 +39,7 @@ AWS‑Multi‑Agent/
 - A deployed **Bedrock Agent** with registered Lambda tools
 - Python 3.10+ (for local dev or testing)
 
----
 
-## 🚀 Deployment Steps
-
-### 1. Deploy Lambda Functions (Tools)
-Use AWS SAM or manual CLI:
-
-```bash
-sam build
-sam deploy --guided
-```
-
-This deploys your hotel/restaurant Lambda handlers and assigns IAM roles.
-
-### 2. Register Tools in Bedrock
-
-- In AWS Console: go to **Bedrock > Agents**
-- Choose your agent or create a new one.
-- Under **"Add Action Group"**:
-  - Set `Lambda ARN` to your deployed function.
-  - Define input/output schema (if needed).
-
-### 3. Test Agent Interactions
-
-You can invoke via:
-- **AWS Console > Bedrock Chat playground**
-- **Notebooks** in `/notebooks`
-- **API Gateway + Lambda proxy** (optional)
-
----
-
-## 🧪 Sample Lambda Function
-
-```python
-def lambda_handler(event, context):
-    city = event.get("city", "Berlin")
-    return {
-        "hotels": [
-            {"name": "Grand Berlin Hotel", "rating": 4.6},
-            {"name": "City Inn", "rating": 4.2}
-        ]
-    }
-```
-
----
 
 ## 🔐 Security
 
