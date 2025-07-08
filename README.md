@@ -13,7 +13,6 @@ This repository demonstrates a secure, modular, **multi-agent system** where rea
 - **IAM Authentication**: All components authenticate and authorize using IAM roles — **no API keys** stored anywhere.
 - **Serverless & Scalable**: Fully managed with Lambda, Bedrock, IAM, and optional CloudWatch/S3.
 
-![architecture](docs/architecture-diagram.png) <!-- Add if available -->
 
 ---
 
